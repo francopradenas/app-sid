@@ -10,12 +10,14 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::resource('cdi','CdiController');
+Route::resource('predios','PredioController');
+Route::resource('productores','ProductorController');
+Route::resource('servicios','ServicioController');
+Route::resource('vehiculos','VehiculoController');
+Route::resource('usuarios','UsuarioController');
+Route::resource('usuario.servicios','ServicioController')
 
-Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+?>

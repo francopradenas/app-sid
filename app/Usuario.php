@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-	class Servicio extends Model
+	class Usuario extends Model
 	{
 		protected $table ='usuarios';
 
@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 		protected $fillable = array('nombre','paterno','materno','id_servicio');
 
-		public function cdi_productor()
+		public function cdi_usuario()
 		{
 			$this->hasMany('Cdi');
 		}
