@@ -24,7 +24,7 @@ class PredioController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return "mostrar formulario de ingreso de predio";
 	}
 
 	/**
@@ -45,7 +45,7 @@ class PredioController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		return "mostrar predio por este id:  ".$id;
 	}
 
 	/**
@@ -56,7 +56,7 @@ class PredioController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		return "mostrar formulario para editar predio por este id:  ".$id;
 	}
 
 	/**
