@@ -1,9 +1,10 @@
-<?php
+ <?php
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use App\Predio;
 
-class DatabaseSeeder extends Seeder {
+class PredioSeeder extends Seeder {
 
 	/**
 	 * Run the database seeds.
@@ -13,11 +14,11 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		//Model::unguard();
-
-		//$this->call('PredioSeeder');
-		$this->call('ProductorSeeder');
-		$this->call('VehiculoSeeder');
-		//$this->call('CdiSeeder');
+		Predio::create(['id_predio'=>'10053',
+						'nombre'=>'LA OLLA',
+						'nombre_corto'=>'LA OLLA'
+					   ]);
+		
 	}
 
 }
