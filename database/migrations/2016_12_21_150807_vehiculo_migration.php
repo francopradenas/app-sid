@@ -14,7 +14,13 @@ class VehiculoMigration extends Migration {
 	{
 		Schema::create('vehiculos', function(Blueprint $table)
 		{
-			$table->increments('id');
+			$table->string('patente');
+			$table->primary('patente');
+			$table->string('marca');
+			$table->string('modelo');
+			$table->string('year');
+			$table->string('kilometraje');
+			$table->string('conductor');
 			$table->timestamps();
 		});
 	}

@@ -14,7 +14,8 @@ class ProductorMigration extends Migration {
 	{
 		Schema::create('productores', function(Blueprint $table)
 		{
-			$table->increments('id');
+			$table->integer('id_productor');
+			$table->primary('id_productor');
 			$table->string('nombre');
 			$table->string('nombre_corto');
 			$table->string('zona');

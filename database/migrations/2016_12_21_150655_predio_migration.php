@@ -14,7 +14,8 @@ class PredioMigration extends Migration {
 	{
 		Schema::create('predios', function(Blueprint $table)
 		{
-			$table->increments('id');
+			$table->integer('id_predio');
+			$table->primary('id_predio');
 			$table->string('nombre');
 			$table->string('nombre_corto');
 			$table->string('zona');
