@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 	{
 		protected $table ='predios';
 
-		protected $primaryKey = 'id';
+		protected $primaryKey = 'id_predio';
 
-		protected $fillable = array('nombre','nombre_corto','zona');
+		protected $fillable = array('id_predio','nombre','nombre_corto','zona');
+
+		protected $hidden = ['created_at','updated_at'];
 
 		public function cdi_predio()
 		{
