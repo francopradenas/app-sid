@@ -12,7 +12,6 @@ use Illuminate\Database\Eloquent\Model;
 									 'fecha',
 									 'zona',
 									 'id_predio',
-									 'nombre_predio',
 									 'volumen_programa',
 									 'volumen_medido',
 									 'intervencion',
@@ -32,7 +31,6 @@ use Illuminate\Database\Eloquent\Model;
 									 'valor',
 									 'detalle',
 									 'id_productor',
-									 'productor',
 									 'tiene_acta',
 									 'ruma_cerrada',
 									 'equipo_madereo',
@@ -45,6 +43,7 @@ use Illuminate\Database\Eloquent\Model;
 									 'ubicacion',
 									 'tarros_pintura',
 									 );
+		protected $hidden = array("created_at","updated_at");
 
 		public function predios()
 		{

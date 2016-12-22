@@ -2,13 +2,15 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-	class Predio extends Model
+	class Vehiculo extends Model
 	{
 		protected $table ='vehiculos';
     
 		protected $primaryKey = 'patente';
 
-		protected $fillable = array('marca','modelo','year','kilometraje','conductor');
+		protected $fillable = array('patente','marca','modelo','year','kilometraje','conductor');
+
+		protected $hidden = array('created_at','updated_at');
 
 		public function cdi_vehiculo()
 		{

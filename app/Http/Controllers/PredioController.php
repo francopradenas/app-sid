@@ -30,14 +30,17 @@ class PredioController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		if(!$request->input('id_predio') || !$request->input('nombre') ||
-		   !$request->input('zona'))
+		if( !$request->input('id_predio') || 
+			!$request->input('nombre') ||
+		    !$request->input('zona')
+		  )
 			{
 				return response()->json(['mensaje'=>'','valores no generados','422'],422);
 			}	
 			else
 			{
 				Predio::create($request->all());
+
 				return response()->json(['mensaje'=>'Registro ingresado correctamente','codigo'=>'201'],201);
 			}	
 
@@ -85,15 +88,15 @@ class PredioController extends Controller {
 		{
 			if($metodo === 'PATCH')
 			{
-				$id_predio = $request->input('id_predio');
-				$nombre = $request->input('nombre');
-				$nombre_corto = $request->input('nombre_corto');
-				$zona = $request->input('zona');
+				$id_predio  	= $request->input('id_predio');
+				$nombre 		= $request->input('nombre');
+				$nombre_corto 	= $request->input('nombre_corto');
+				$zona 			= $request->input('zona');
 
-				if($nombre != null && $nombre != ''){$predio->nombre =$nombre;}
-				if($nombre_corto != null && $nombre_corto!=''){$predio->nombre_corto=$nombre_corto;}
-				if($zona != null && $zona!=''){$predio->zona = $zona;}
-				if($id_predio !=null && $id_predio !=''){$predio->id_predio =$id_predio;}
+			if($nombre 		 != null && $nombre 	 !=''){$predio->nombre 		=$nombre;}
+			if($nombre_corto != null && $nombre_corto!=''){$predio->nombre_corto=$nombre_corto;}
+			if($zona		 != null && $zona	 	 !=''){$predio->zona 		=$zona;}
+			if($id_predio 	 !=null && $id_predio 	 !=''){$predio->id_predio 	=$id_predio;}
 
 				if($predio->save())
 				{
@@ -123,7 +126,23 @@ class PredioController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//	
+		$predio = Predio::find($id);
+
+		if(!$predio)
+		{
+			return response()->json(['mensaje'=>'','nada encontrado para borrar','404'],404);
+		}
+		else
+		{
+			if($predio->delete())
+			{
+				return response()->json(['mensaje'=>'','predio eliminado','204'],200);
+			}
+			else
+			{
+				 return response()->json(['mensaje'=>'registro no pudo ser eliminado','codigo'=>'422'],422);
+			}
+		}
 	}
 
 }

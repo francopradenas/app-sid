@@ -10,13 +10,13 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::resource('cdi','CdiController');
-Route::resource('predios','PredioController');
-Route::resource('productores','ProductorController');
-Route::resource('servicios','ServicioController');
-Route::resource('vehiculos','VehiculoController');
-Route::resource('usuarios','UsuarioController');
-Route::resource('usuario.servicios','ServicioController')
+Route::resource('cdi','CdiController',['except'=>'create','edit']);
+Route::resource('predios','PredioController',['except'=>'create','edit']);
+Route::resource('productores','ProductorController',['except'=>'create','edit']);
+Route::resource('servicios','ServicioController',['except'=>'create','edit']);
+Route::resource('vehiculos','VehiculoController',['except'=>'create','edit']);
+Route::resource('usuarios','UsuarioController',['except'=>'create','edit']);
+Route::resource('usuario.servicios','ServicioController',['except'=>'create','edit'])
 
 
 
